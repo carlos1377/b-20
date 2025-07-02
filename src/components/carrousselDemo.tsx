@@ -4,29 +4,31 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 export function CarouselDemo() {
   const images = [
-    "https://i.pinimg.com/originals/44/2d/3a/442d3a1247a6d49406a57f4275c1e7c7.jpg",
-    "https://wallpapers.com/images/hd/obito-uchiha-anime-4k-hd-wallpaper-azjpr5uz8lhc7yyf.jpg",
-  ]
+    "/images/imagem1.jpg",
+    "/images/imagem2.jpg",
+  ];
 
   return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-        {images.map((src, index) => (
-          <CarouselItem key={index}>
-            <img
-              src={src}
-              alt={`Imagem ${index + 1}`}
-              className="w-full aspect-square object-cover rounded-lg"
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  )
+    <div className="w-full" style={{ marginTop: "-300px" }}> {/* SUBSTITUA "80px" PELA ALTURA EXATA DO SEU HEADER */}
+      <Carousel>
+        <CarouselContent>
+          {images.map((src, index) => (
+            <CarouselItem key={index}>
+              <img
+                src={src}
+                alt={`Imagem ${index + 1}`}
+                className="w-full h-[600px] object-cover" // Altura fixa de 300px (ajuste conforme necessário)
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+      </Carousel>
+    </div>
+  );
 }
