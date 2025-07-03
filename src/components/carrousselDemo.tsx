@@ -13,7 +13,7 @@ export function CarouselDemo() {
   ];
 
   return (
-    <div className="w-full" style={{ marginTop: "-300px" }}> {/* SUBSTITUA "80px" PELA ALTURA EXATA DO SEU HEADER */}
+    <div className="w-full" style={{ marginTop: "-320px" }}> {/* SUBSTITUA "80px" PELA ALTURA EXATA DO SEU HEADER */}
       <Carousel>
         <CarouselContent>
           {images.map((src, index) => (

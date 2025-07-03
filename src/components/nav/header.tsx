@@ -66,7 +66,7 @@ const navigationLinks = [
 
 export function Header() {
   return (
-    <header className="border-b px-4 md:px-6">
+    <header className="border-b px-4 md:px-6 bg-gradient-to-r from-emerald-500 from-45%  via-55% to-sky-500">
       <div className="flex h-16 items-center justify-between gap-4">
         {/* Left side */}
         <div className="flex items-center gap-2">
@@ -74,7 +74,7 @@ export function Header() {
           <Popover>
             <PopoverTrigger asChild>
               <Button
-                className="group size-8 md:hidden"
+                className="group size-8 md:hidden text-white hover:bg-white/20"
                 variant="ghost"
                 size="icon"
               >
@@ -105,14 +105,14 @@ export function Header() {
                 </svg>
               </Button>
             </PopoverTrigger>
-            <PopoverContent align="start" className="w-64 p-1 md:hidden">
+            <PopoverContent align="start" className="w-64 p-1 md:hidden bg-gradient-to-b from-indigo-500 to-emerald-500 border-white/20">
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
                       {link.submenu ? (
                         <>
-                          <div className="text-muted-foreground px-2 py-1.5 text-xs font-medium">
+                          <div className="text-white px-2 py-1.5 text-xs font-medium">
                             {link.label}
                           </div>
                           <ul>
@@ -120,7 +120,7 @@ export function Header() {
                               <li key={itemIndex}>
                                 <NavigationMenuLink
                                   href={item.href}
-                                  className="py-1.5"
+                                  className="py-1.5 text-white hover:bg-white/10"
                                 >
                                   {item.label}
                                 </NavigationMenuLink>
@@ -129,15 +129,11 @@ export function Header() {
                           </ul>
                         </>
                       ) : (
-                        <NavigationMenuLink href={link.href} className="py-1.5">
+                        <NavigationMenuLink href={link.href} className="py-1.5 text-white hover:bg-white/10">
                           {link.label}
                         </NavigationMenuLink>
                       )}
-                      {/* Add separator between different types of items */}
                       {index < navigationLinks.length - 1 &&
-                        // Show separator if:
-                        // 1. One is submenu and one is simple link OR
-                        // 2. Both are submenus but with different types
                         ((!link.submenu &&
                           navigationLinks[index + 1].submenu) ||
                           (link.submenu &&
@@ -148,7 +144,7 @@ export function Header() {
                           <div
                             role="separator"
                             aria-orientation="horizontal"
-                            className="bg-border -mx-1 my-1 h-px w-full"
+                            className="bg-white/20 -mx-1 my-1 h-px w-full"
                           />
                         )}
                     </NavigationMenuItem>
@@ -159,8 +155,12 @@ export function Header() {
           </Popover>
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="#" className="text-primary hover:text-primary/90">
-              B20
+            <a href="#" className="flex items-center">
+              <img 
+                src="/images/imagem2.jpg"  
+                alt="Logo Bento+20"
+                className="h-12 w-auto"
+              />
             </a>
             {/* Navigation menu */}
             <NavigationMenu viewport={false} className="max-md:hidden">
@@ -169,10 +169,10 @@ export function Header() {
                   <NavigationMenuItem key={index}>
                     {link.submenu ? (
                       <>
-                        <NavigationMenuTrigger className="text-muted-foreground hover:text-primary bg-transparent px-2 py-1.5 font-medium *:[svg]:-me-0.5 *:[svg]:size-3.5">
+                        <NavigationMenuTrigger className="text-white hover:text-gray-200 bg-white/0 px-2 py-1.5 font-medium *:[svg]:-me-0.5 *:[svg]:size-3.5 hover:bg-white/10">
                           {link.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="data-[motion=from-end]:slide-in-from-right-16! data-[motion=from-start]:slide-in-from-left-16! data-[motion=to-end]:slide-out-to-right-16! data-[motion=to-start]:slide-out-to-left-16! z-50 p-1">
+                        <NavigationMenuContent className="data-[motion=from-end]:slide-in-from-right-16! data-[motion=from-start]:slide-in-from-left-16! data-[motion=to-end]:slide-out-to-right-16! data-[motion=to-start]:slide-out-to-left-16! z-50 p-1 bg-gradient-to-b from-indigo-500 to-emerald-500 border-white/20">
                           <ul
                             className={cn(
                               link.type === "description"
@@ -184,49 +184,45 @@ export function Header() {
                               <li key={itemIndex}>
                                 <NavigationMenuLink
                                   href={item.href}
-                                  className="py-1.5"
+                                  className="py-1.5 text-white hover:bg-white/10"
                                 >
-                                  {/* Display icon if present */}
                                   {link.type === "icon" && "icon" in item && (
                                     <div className="flex items-center gap-2">
                                       {item.icon === "BookOpenIcon" && (
                                         <BookOpenIcon
                                           size={16}
-                                          className="text-foreground opacity-60"
+                                          className="text-white opacity-80"
                                           aria-hidden="true"
                                         />
                                       )}
                                       {item.icon === "LifeBuoyIcon" && (
                                         <LifeBuoyIcon
                                           size={16}
-                                          className="text-foreground opacity-60"
+                                          className="text-white opacity-80"
                                           aria-hidden="true"
                                         />
                                       )}
                                       {item.icon === "InfoIcon" && (
                                         <InfoIcon
                                           size={16}
-                                          className="text-foreground opacity-60"
+                                          className="text-white opacity-80"
                                           aria-hidden="true"
                                         />
                                       )}
                                       <span>{item.label}</span>
                                     </div>
                                   )}
-
-                                  {/* Display label with description if present */}
                                   {link.type === "description" &&
                                   "description" in item ? (
                                     <div className="space-y-1">
-                                      <div className="font-medium">
+                                      <div className="font-medium text-white">
                                         {item.label}
                                       </div>
-                                      <p className="text-muted-foreground line-clamp-2 text-xs">
+                                      <p className="text-white/80 line-clamp-2 text-xs">
                                         {item.description}
                                       </p>
                                     </div>
                                   ) : (
-                                    // Display simple label if not icon or description type
                                     !link.type ||
                                     (link.type !== "icon" &&
                                       link.type !== "description" && (
@@ -242,7 +238,7 @@ export function Header() {
                     ) : (
                       <NavigationMenuLink
                         href={link.href}
-                        className="text-muted-foreground hover:text-primary py-1.5 font-medium"
+                        className="text-white hover:text-gray-200 py-1.5 font-medium hover:bg-white/10 px-2 rounded"
                       >
                         {link.label}
                       </NavigationMenuLink>
@@ -255,10 +251,10 @@ export function Header() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm" className="text-sm">
+          <Button asChild variant="ghost" size="sm" className="text-sm text-white hover:bg-white/20">
             <a href="#">Sign In</a>
           </Button>
-          <Button asChild size="sm" className="text-sm">
+          <Button asChild size="sm" className="text-sm bg-white text-indigo-600 hover:bg-gray-100">
             <a href="#">Get Started</a>
           </Button>
         </div>
