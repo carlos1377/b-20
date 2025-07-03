@@ -105,7 +105,10 @@ export function Header() {
                 </svg>
               </Button>
             </PopoverTrigger>
-            <PopoverContent align="start" className="w-64 p-1 md:hidden bg-gradient-to-b from-indigo-500 to-emerald-500 border-white/20">
+            <PopoverContent
+              align="start"
+              className="w-64 p-1 md:hidden bg-gradient-to-b from-indigo-500 to-emerald-500 border-white/20"
+            >
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
@@ -129,7 +132,10 @@ export function Header() {
                           </ul>
                         </>
                       ) : (
-                        <NavigationMenuLink href={link.href} className="py-1.5 text-white hover:bg-white/10">
+                        <NavigationMenuLink
+                          href={link.href}
+                          className="py-1.5 text-white hover:bg-white/10"
+                        >
                           {link.label}
                         </NavigationMenuLink>
                       )}
@@ -156,8 +162,8 @@ export function Header() {
           {/* Main nav */}
           <div className="flex items-center gap-6">
             <a href="#" className="flex items-center">
-              <img 
-                src="/images/imagem2.jpg"  
+              <img
+                src="/images/logo.png"
                 alt="Logo Bento+20"
                 className="h-12 w-auto"
               />
@@ -251,10 +257,19 @@ export function Header() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm" className="text-sm text-white hover:bg-white/20">
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="text-sm text-white hover:bg-white/20"
+          >
             <a href="#">Sign In</a>
           </Button>
-          <Button asChild size="sm" className="text-sm bg-white text-indigo-600 hover:bg-gray-100">
+          <Button
+            asChild
+            size="sm"
+            className="text-sm bg-white text-indigo-600 hover:bg-gray-100"
+          >
             <a href="#">Get Started</a>
           </Button>
         </div>

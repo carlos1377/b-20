@@ -1,9 +1,15 @@
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-border mt-8">
+    <footer className="bborder-b px-4 md:px-6 bg-gradient-to-r from-emerald-500 from-45%  via-55% to-sky-500">
       <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
         {/* Logo */}
-        <div className="text-xl font-bold text-foreground">B20</div>
+        <a href="#" className="flex">
+          <img
+            src="/images/logo.png"
+            alt="Logo Bento+20"
+            className="h-12 w-auto"
+          />
+        </a>
 
         {/* Links */}
         <nav className="flex gap-4 text-muted-foreground text-sm">
