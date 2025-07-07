@@ -18,50 +18,143 @@ import {
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home" },
   {
-    label: "Features",
-    submenu: true,
-    type: "description",
-    items: [
+    "label": "Página principal",
+    "submenu": false,
+    "type": "description",
+    "items": [
       {
-        href: "#",
-        label: "Components",
-        description: "Browse all components in the library.",
-      },
-      {
-        href: "#",
-        label: "Documentation",
-        description: "Learn how to use the library.",
-      },
-      {
-        href: "#",
-        label: "Templates",
-        description: "Pre-built layouts for common use cases.",
-      },
-    ],
+        "label": "Página principal",
+        "description": "Volte para a página inicial do Bento+20."
+      }
+    ]
   },
   {
-    label: "Pricing",
-    submenu: true,
-    type: "simple",
-    items: [
-      { href: "#", label: "Product A" },
-      { href: "#", label: "Product B" },
-      { href: "#", label: "Product C" },
-      { href: "#", label: "Product D" },
-    ],
+    "label": "Sobre",
+    "submenu": true,
+    "type": "description",
+    "items": [
+      {
+        "label": "Histórico",
+        "description": "Conheça a história do Bento+20."
+      },
+      {
+        "label": "Diretoria",
+        "description": "Veja quem faz parte da diretoria."
+      },
+      {
+        "label": "Conselheiros",
+        "description": "Conheça os conselheiros."
+      },
+      {
+        "label": "Tribuna do B+20",
+        "description": "Leia a Tribuna do B+20."
+      },
+      {
+        "label": "Documentos",
+        "description": "Acesse documentos importantes."
+      }
+    ]
   },
   {
-    label: "About",
-    submenu: true,
-    type: "icon",
-    items: [
-      { href: "#", label: "Getting Started", icon: "BookOpenIcon" },
-      { href: "#", label: "Tutorials", icon: "LifeBuoyIcon" },
-      { href: "#", label: "About Us", icon: "InfoIcon" },
-    ],
+    "label": "Câmaras Técnicas",
+    "submenu": true,
+    "type": "description",
+    "items": [
+      {
+        "label": "Cidadania",
+        "description": "Informações sobre a câmara de Cidadania."
+      },
+      {
+        "label": "Educação",
+        "description": "Informações sobre a câmara de Educação."
+      },
+      {
+        "label": "Comércio",
+        "description": "Informações sobre a câmara de Comércio."
+      },
+      {
+        "label": "Desenvolvimento Rural",
+        "description": "Informações sobre a câmara de Desenvolvimento Rural."
+      },
+      {
+        "label": "Indústria",
+        "description": "Informações sobre a câmara de Indústria."
+      },
+      {
+        "label": "Inovação",
+        "description": "Informações sobre a câmara de Inovação."
+      },
+      {
+        "label": "Meio Ambiente",
+        "description": "Informações sobre a câmara de Meio Ambiente."
+      },
+      {
+        "label": "Saúde",
+        "description": "Informações sobre a câmara de Saúde."
+      },
+      {
+        "label": "Serviços",
+        "description": "Informações sobre a câmara de Serviços."
+      },
+      {
+        "label": "Segurança",
+        "description": "Informações sobre a câmara de Segurança."
+      },
+      {
+        "label": "Turismo e Cultura",
+        "description": "Informações sobre a câmara de Turismo e Cultura."
+      },
+      {
+        "label": "Urbanismo",
+        "description": "Informações sobre a câmara de Urbanismo."
+      }
+    ]
   },
+  {
+    "label": "Masterplan",
+    "submenu": false,
+    "type": "description",
+    "items": [
+      {
+        "label": "Masterplan",
+        "description": "Conheça o Masterplan do Bento+20."
+      }
+    ]
+  },
+  {
+    "label": "Notícias",
+    "submenu": false,
+    "type": "description",
+    "items": [
+      {
+        "label": "Notícias",
+        "description": "Veja as últimas notícias."
+      }
+    ]
+  },
+  {
+    "label": "PARTICIPE!!",
+    "submenu": false,
+    "type": "description",
+    "items": [
+      {
+        "label": "PARTICIPE!!",
+        "description": "Saiba como participar."
+      }
+    ]
+  },
+  {
+    "label": "Contato",
+    "submenu": false,
+    "type": "description",
+    "items": [
+      {
+        "label": "Contato",
+        "description": "Entre em contato com o Bento+20."
+      }
+    ]
+  }
 ];
 
 export function Header() {
@@ -122,7 +215,6 @@ export function Header() {
                             {link.items.map((item, itemIndex) => (
                               <li key={itemIndex}>
                                 <NavigationMenuLink
-                                  href={item.href}
                                   className="py-1.5 text-white hover:bg-white/10"
                                 >
                                   {item.label}
@@ -133,7 +225,6 @@ export function Header() {
                         </>
                       ) : (
                         <NavigationMenuLink
-                          href={link.href}
                           className="py-1.5 text-white hover:bg-white/10"
                         >
                           {link.label}
@@ -161,13 +252,11 @@ export function Header() {
           </Popover>
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="#" className="flex items-center">
               <img
                 src="/images/logo.png"
                 alt="Logo Bento+20"
                 className="h-12 w-auto"
               />
-            </a>
             {/* Navigation menu */}
             <NavigationMenu viewport={false} className="max-md:hidden">
               <NavigationMenuList className="gap-2">
@@ -189,7 +278,6 @@ export function Header() {
                             {link.items.map((item, itemIndex) => (
                               <li key={itemIndex}>
                                 <NavigationMenuLink
-                                  href={item.href}
                                   className="py-1.5 text-white hover:bg-white/10"
                                 >
                                   {link.type === "icon" && "icon" in item && (
@@ -243,11 +331,12 @@ export function Header() {
                       </>
                     ) : (
                       <NavigationMenuLink
-                        href={link.href}
                         className="text-white hover:text-gray-200 py-1.5 font-medium hover:bg-white/10 px-2 rounded"
-                      >
+                        href="carlão mente fraca"
+                      > 
                         {link.label}
                       </NavigationMenuLink>
+                      
                     )}
                   </NavigationMenuItem>
                 ))}
@@ -256,23 +345,7 @@ export function Header() {
           </div>
         </div>
         {/* Right side */}
-        <div className="flex items-center gap-2">
-          <Button
-            asChild
-            variant="ghost"
-            size="sm"
-            className="text-sm text-white hover:bg-white/20"
-          >
-            <a href="#">Sign In</a>
-          </Button>
-          <Button
-            asChild
-            size="sm"
-            className="text-sm bg-white text-indigo-600 hover:bg-gray-100"
-          >
-            <a href="#">Get Started</a>
-          </Button>
-        </div>
+  
       </div>
     </header>
   );
