@@ -1,6 +1,9 @@
 export function JournalCards() {
   return (
     <div className="flex flex-col items-center justify-center p-5 gap-5">
+      <h2 className="justify-self-start text-4xl font-bold text-primary">
+        Últimos jornais publicados
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
         {Array.from({ length: 6 }).map((_, index) => (
           <div
