@@ -1,10 +1,17 @@
 export function NewsImages() {
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-primary text-center">
-        Pensar e agir para o <span className="text-emerald-400">futuro</span> de
-        Bento Gonçalves
-      </h2>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary">
+            Pensar e agir para o{" "}
+            <span className="text-emerald-400">futuro</span> de Bento Gonçalves
+          </h2>
+        </div>
+        <a href="#" className="flex-shrink-0">
+          <img src="/images/logo.png" alt="Logo" className="h-30 md:h-22" />
+        </a>
+      </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-5 p-5">
         <div className="relative w-full md:w-1/2 h-[300px] md:h-[600px] rounded-lg overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center bg-[url(/images/carrousel-1.png)]" />

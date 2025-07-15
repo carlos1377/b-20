@@ -216,7 +216,11 @@ export function Header() {
           {/* Main nav */}
           <div className="flex items-center gap-6">
             <a href="#">
-              <img src="/images/logo.png" alt="Logo" className="h-12 w-auto" />
+              <img
+                src="/images/logo.png"
+                alt="Logo"
+                className="md:h-20 w-auto h-12"
+              />
             </a>
             {/* Navigation menu */}
             <NavigationMenu viewport={false} className="max-md:hidden">

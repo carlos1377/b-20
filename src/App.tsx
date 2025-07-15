@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="flex flex-col bg-background text-foreground gap-10">
       <Header />
-      <section className="container mx-auto flex flex-col gap-12 md:gap-18 px-4">
+      <section className="container mx-auto flex flex-col gap-18 px-4">
         <NewsImages />
         <NumbersPresentation />
         <JournalCards />
